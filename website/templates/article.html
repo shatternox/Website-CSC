@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <style>
+        body{
+            background-color: black;
+        }
+        .body-palsu{
+            margin-top: 4%;
+        }
+
+        .tombol{
+            margin-left: 11.4%;
+            margin-top: 6.5%;
+            font-size: 20px;
+        }
+        .allArticle{
+            width: 50%;
+        }
+        .page{
+            text-align: center;
+        }
+        .card-title{
+            font-size: 3rem;
+        }
+        .card{
+            padding:5% 0;
+            border-bottom: 1px solid white;
+        }
+    </style>
+
+    <div class="body-palsu">
+
+        {% if  current_user.is_authenticated %}
+            <div class="tombol">
+                <strong><a href="{{url_for('articles.create_article')}}" class="btn btn-success">Add Article</a></strong>
+            </div>
+        {% endif %}
+        <div class="container allArticle">
+            {% for article in article.items %}
+                <div class="card">
+                    <div class="card-body">
+                        <h2><a class="card-title" href="{{url_for('articles.article_solo', article_id=article.id)}}">{{article.title}}</a></h2>
+                        <img src="/static/images/article/{{ article.picture }}" alt="" class="article_pics">
+                        <br>
+                        <a href="{{url_for('users.account', username=article.author.username)}}">Written By: {{article.author.username}}</a>
+                        <p>Published on: {{article.date}}</p>
+                        <p class="card-text">{{article.content[:200]}}..</p>
+                        <a href="{{ url_for('articles.article_solo', article_id=article.id) }}">Read more!</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <nav aria-label="" class="page">
+            <ul class="pagination justify-content-center">
+                {% for page_num in article.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                    {% if article.page == page_num %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="{{url_for('articles.article', page=page_num)}}">{{page_num}}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href="{{url_for('articles.article', page=page_num)}}">{{page_num}}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+
+    </div>
+
+
+<script src="/static/Table/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $('.article_pics').toArray().forEach(e => {
+                if (e.clientWidth > e.clientHeight){
+                    console.log(e)
+                    e.style.width = "600px"
+                    e.style.height = "350px";
+                } else if (e.clientHeight > e.clientWidth){
+                    e.style.width = "250px";
+                    e.style.height = "350px";    
+                } else {
+                    e.style.width = "350px";
+                    e.style.height = "350px";
+                }
+            });
+
+        })
+
+    </script>
+{% endblock %}

@@ -1,0 +1,347 @@
+{% extends "base.html" %}
+{% block content %}
+
+<link rel="stylesheet" href="../static/account/css/templatemo-blue.css">
+<link rel="stylesheet" href="../static/account/css/bootstrap.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="../static/Table/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<link rel="stylesheet" type="text/css" href="../static/Table/css/util.css">
+<link rel="stylesheet" type="text/css" href="../static/Table/css/main.css">
+<!-- FOR TABLE -->
+
+
+<style>
+	body{
+		background-image: url('../static/images/background/{{ user.background }}');
+		height: 100%;
+	}
+
+	.experience{
+		margin-bottom: 20%;
+	}
+	
+	.btn-primary{
+		background-color: #b61616;
+		border-color: #b61616;
+	}
+	.btn-modal{
+		color: white;
+	}
+	.table100{
+		width: 50%;
+		margin-left: 25%;
+	}
+	@media screen and (max-width: 500px) {
+		.table100{
+			width: 100%;
+			margin-left: 0%;
+		}
+	}
+	.btn-bottom{
+		margin-left: 50px;
+    	margin-bottom: 25px;
+	}
+	.btn-bottom2{
+		margin-top:10px;
+		margin-left: 10px;
+    	margin-bottom: 15px;
+	}
+	table{
+		font-family: 'Source Sans Pro', sans-serif;
+	}
+	.sejajar{
+		width: 200px;
+		height: 200px;
+	}
+	.profile-img{
+		height: 200px;
+		width: 200px;
+		overflow: hidden;
+		border-radius: 100px;
+		display:inline-block;
+		text-align:center;
+	}
+	.form.control.form-control-lg{
+		border: 1px solid;
+  		padding: 10px;
+		  box-shadow: 5px 10px #b61616;
+		  width: 100%;
+	}
+	.list-inline{
+        margin: 0px 0px;
+    }
+	/* .container.flex-none{
+		display: inline-block;
+	}
+	.nav.navbar-nav{
+		display: inline-block;
+	}
+	.fixed-top{
+		padding: 20px;
+	} */
+	.list-inline>li{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+</style>
+
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<div class="profile-img img-responsive img-circle tm-border" role="button" data-toggle="modal" data-target="#profileModal"><img src="../static/images/profile_image/{{ user.profile_image }}" alt="" style="width: 100%;"></div>
+				<!-- <img role="button" src="../static/images/profile_image/{{ user.profile_image }}" alt="Avatar" class="img-responsive img-circle tm-border sejajar" data-toggle="modal" data-target="#profileModal" > -->
+				<!-- <hr> -->
+				<h1 role="button" class="tm-title bold shadow">{{ user.name }}</h1>
+				{% if user.role == 1 %}
+					<h1 role="button" class="white bold shadow">Head of {{ user.division }}</h1>
+				{% else %}
+					<h1 role="button" class="white bold shadow">{{ user.division }}</h1>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</header>
+
+{% if current_user.username == user.username or current_user.role == 3 %}
+<!-- profile modal -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h2 class="modal-title" id="exampleModalLabel">Edit Profile</h2>
+		</div>
+		<div class="modal-body">
+		 	<form method="POST" enctype="multipart/form-data" id="updateprofile">
+				{{ form.hidden_tag() }}
+				<div class="form-group">
+					{{ form.username.label(class='form-group') }}
+     			  	{{ form.username(class='form-control') }}
+				</div>
+				<div class="form-group">
+					{{ form.email.label(class='form-group') }}
+					{{ form.email(class='form-control') }}
+				</div>
+				<div class="form-group">
+					{{ form.profile_image.label(class='form-group') }}
+					{{ form.profile_image() }}
+				</div>
+				<div class="form-group">
+					<button type="button" class="btn btn-warning" data-dismiss="modal" data-toggle="modal" data-target="#passwordModal">Change Password</button>
+				</div>	
+		</div>
+		<div class="modal-footer">
+		  		{{ form.update(class='btn btn-primary') }}
+			</form>
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+</div>
+{% endif %}
+
+<!-- Change Password -->
+<div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h2 class="modal-title" id="exampleModalLabel">Change Password</h2>
+		</div>
+		<div class="modal-body">
+			<form method="POST" enctype="multipart/form-data">
+				{{ form_password.hidden_tag() }}
+				<div class="form-group">
+					{{ form_password.current_password.label(class='form-group') }}
+					{{ form_password.current_password(class='form-control') }}
+				</div>
+				<div class="form-group">
+					{{ form_password.new_password.label(class='form-group') }}
+					{{ form_password.new_password(class='form-control') }}
+				</div>
+				<div class="form-group">
+					{{ form_password.confirm_password.label(class='form-group') }}
+					{{ form_password.confirm_password(class='form-control') }}
+				</div>
+				<div class="form-group">
+					{{ form_password.change_password(class='btn btn-primary') }}
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+</div>
+
+<h2 class="tm-title bold shadow" style="text-align:center">To do List</h2>
+
+<div class="table100 ver1 m-b-110">
+	<div class="table100-head">
+		<table>
+			<thead>
+				<tr class="row100 head">
+					<th class="cell100 column1">Title</th>
+					<th class="cell100 column2">Description</th>
+					<th class="cell100 column3">Time</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+	{% for t in todo %}
+		<div class="table100-body js-pscroll">
+			<table>
+				<tbody>
+					<tr class="row100 body rowB" id="rowId{{t.id}}">
+						<td role="button" data-toggle="modal" data-target="#tablemodal" class="cell100 column1">{{ t.title }}</td>
+						<td role="button" data-toggle="modal" data-target="#tablemodal" class="cell100 column2">{{ t.text }}</td>
+						<td role="button" data-toggle="modal" data-target="#tablemodal" class="cell100 column3">{{ t.date }}</td>
+						<td style="display:none">{{t.id}}</td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	{% endfor %}
+	{% if current_user.username == user.username or current_user.role == 2 or current_user.role == 3 %}
+		<button type="button" class="btn btn-primary btn-bottom2"  role="button" data-toggle="modal" data-target="#tablemodal-n">Create</button>
+	{% endif %}
+</div>
+
+{% if current_user.username == user.username or current_user.role == 3 %}
+	<button type="button" class="btn btn-primary btn-bottom"  role="button" data-toggle="modal" data-target="#bgmodal">Change Background</button>
+{% endif %}
+	
+<!-- Todo Update -->
+
+	<div class="modal fade" id="tablemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+				  <h2 class="modal-title" id="exampleModalLabel">Edit To do</h2>
+				  
+				</div>
+				<div class="modal-body">
+					<form method="POST">
+						<div class="form-group">
+							{{ form_toupdate.todo_id(id="todo_id") }}
+							{{ form_toupdate.title.label(class="form-control-label") }}
+							<br>
+							{{ form_toupdate.title(class="form control form-control-lg") }}
+						</div>
+						<div class="form-group">
+							{{ form_toupdate.text.label(class="form-control-label") }}
+							<br>
+							{{ form_toupdate.text(class="form control form-control-lg") }}
+						</div>
+
+				</div>
+						<div class="modal-footer">
+							{% if user.username == current_user.username or current_user.role == 2 or current_user.role == 3 %}
+								{{ form_toupdate.update(class="btn btn-success") }}
+								{{ form_toupdate.delete(class="btn btn-primary") }}
+							{% endif %}
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>
+					</form>
+			  </div>
+			</div>
+		</div>
+	</div>
+
+
+ <!-- Create todo -->
+ <div class="modal fade" id="tablemodal-n" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h2 class="modal-title" id="exampleModalLabel">New To do</h2>
+		</div>
+		<div class="modal-body">
+			<form method="POST">
+				{{ form_todo.hidden_tag() }}
+				<div class="form-group">
+					{{ form_todo.title.label(class="form-control-label") }}
+					<br>
+					{{ form_todo.title(class="form control form-control-lg",id="merah") }}
+				</div>
+				<div class="form-group">
+					{{ form_todo.text.label(class="form-control-label") }}
+					<br>
+					{{ form_todo.text(class="form control form-control-lg", id="bawang") }}
+				</div>
+			
+		</div>
+				<div class="modal-footer">
+					{{ form_todo.submit(class="btn btn-info") }}
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</form>
+	  </div>
+	</div>
+</div>
+
+<!-- Change BG Modal -->
+<div class="modal fade" id="bgmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h2 class="modal-title" id="exampleModalLabel">Change Background</h2>
+		</div>
+		<div class="modal-body">
+			<form method="POST" enctype="multipart/form-data">
+				<div class="form-group">
+					{{ form_background.background.label(class='form-group') }}
+					{{ form_background.background() }}
+				</div>
+				<div class="form-group">
+					{{ form_background.change_background(class='btn btn-primary') }}
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+</div>
+
+	<script src="../static/Table/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../static/Table/vendor/bootstrap/js/popper.js"></script>
+	<script src="../static/Table/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../static/Table/vendor/select2/select2.min.js"></script>
+	<script src="../static/Table/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+
+
+		$('.rowB').click(function(){
+			var idT = this.id
+			var a = $('#'+idT+' td')
+			$('#title').val(a[0].innerHTML)
+			$('#text').val(a[1].innerHTML)
+			$('#todo_id').val(a[3].innerHTML)
+		})
+
+		$('.profile-img').mouseover(function(){
+			$(this).animate({width: '230px', height: '230px'}, 200)
+          })
+        $('.profile-img').mouseleave(function(){
+			$(this).animate({width: '200px', height: '200px'}, 200)
+		})
+
+		
+	</script>
+	<script src="../static/Table/js/main.js"></script>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    .border{
+        height: 100%;
+        margin-top: 6%;
+        color: white;
+        text-align: center;
+    }
+   
+    .border h1{
+        text-align: center;
+    }
+    .border a,p{
+        font-size:20px;
+    }
+    body{
+        background-color: black;
+    }
+    .content p{
+        font-size:20px;
+    }
+    .formBottom{
+        display:inline-block;
+
+    }
+    input{
+        margin: 10px 5px;
+    }
+    @media only screen and (max-width: 500px) {
+        .border{
+            margin-top: 20%;
+        }
+    }
+</style>
+<div class="border">
+
+    <h1>{{ article.title }}</h1>
+    <img src="/static/images/article/{{article.picture}}" alt="" class="article_pics">
+    <br>
+    <a href="{{url_for('users.account', username=article.author.username)}}">Written By: {{article.author.username}}</a>
+    <p>Published on: {{ article.date }}</p>
+    <div class="content container" style="width: 50%;">
+        <p>{{ article.content }}</p>
+    </div>
+
+</div>
+
+
+
+{% if current_user == article.author %}
+    <form action="{{url_for('articles.delete_article', article_id=article.id)}}" method="POST" class="formBottom">
+        <input class="btn btn-danger" type="submit" value="Delete">
+    </form>
+    <form action="{{url_for('articles.update_article', article_id=article.id)}}" method="POST" class="formBottom">
+        <input class="btn btn-success" type="submit" value="Update">
+    </form>
+{% endif %}
+
+<script src="/static/Table/vendor/jquery/jquery-3.2.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+
+        $('.article_pics').toArray().forEach(e => {
+            if (e.clientWidth > e.clientHeight){
+                console.log(e)
+                e.style.width = "700px"
+                e.style.height = "450px";
+            } else if (e.clientHeight > e.clientWidth){
+                e.style.width = "350px";
+                e.style.height = "450px";    
+            } else {
+                e.style.width = "450px";
+                e.style.height = "450px";
+            }
+        });
+        var height = $('.content')[0].clientHeight + $('body')[0].clientHeight;
+        $('body')[0].style.height = height + "px"
+
+    })
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,394 @@
+
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="../static/ourpeople/css/bootstrap.min.css">
+<link rel="stylesheet" href="../static/ourpeople/css/magnific-popup.css">
+
+<link rel="stylesheet" href="../static/ourpeople/css/owl.theme.css">
+<link rel="stylesheet" href="../static/ourpeople/css/owl.carousel.css">
+
+<!-- MAIN CSS -->
+<link rel="stylesheet" href="../static/base/css/tooplate-style.css">
+
+<style>
+    /* *{
+        background-color: black;
+    } */
+
+    #team{
+        background-color: black;
+        color: white;
+    }
+    .team-item a:hover{
+        color: #a40000;
+    }
+    .team-item img{
+        display: inline;
+    }
+    .owl-carousel p{
+        color: white;
+     }
+     .img-team{
+        width: 244px;
+        height: 248px;
+     }
+     .banner{
+          height: 20px;
+          position: relative;
+          background: rgb(6,6,6);
+          background: linear-gradient(0deg, rgba(6,6,6,1) 49%, rgba(14,28,28,0.5161414907759979) 100%);
+     }
+     .space{
+         height: 40px;
+         background: black;
+     }
+     h2{
+		font-size:30px;
+    }
+    .list-inline{
+        margin: 0px 0px;
+    }
+    .list-inline>li{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .home-text p{
+        margin-left: 10px;
+    }
+    .typing{
+          font-family: 'Raleway', sans-serif;
+     }
+</style>
+<link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+<!-- HOME -->
+<section id="home" class="parallax-section">
+     <div class="overlay"></div>
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-8 col-sm-12">
+                    <div class="home-text">
+                        <h1 class="typing">
+                            <span
+                               class="txt-rotate"
+                               data-period="2000"
+                               data-rotate='["This is Our People"]'></span>
+                       </h1>
+                         <p>Meet our lovely people</p>
+                    </div>
+               </div>
+
+          </div>
+     </div>
+
+     <!-- Video -->
+     <video controls autoplay loop muted>
+          <source src="../static/videos/slideshow.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+     </video>
+</section>
+
+<div class="banner"></div>
+
+<!-- TEAM -->
+<section id="team" class="parallax-section">
+    <div class="container">
+         <div class="row">
+
+              <div class="col-md-offset-2 col-md-8 col-sm-12">
+                   <!-- SECTION TITLE -->
+                   <div class="section-title">
+                        <h1>DPI</h1>
+                   </div>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div id="owl-team" class="owl-carousel">
+                  {% for u in user %}
+                       {% if u.role == 2 %}
+                           <div class="col-md-4 col-sm-4 item">
+                               <div class="team-item">
+                                   <img src="../static/images/profile_image/{{ u.profile_image }}" class="img-responsive img-team">
+                                   <div class="team-overlay">
+                                       <ul class="social-icon">
+                                               <!-- <li><a href="#" class="fa fa-twitter"></a></li>
+                                               <li><a href="#" class="fa fa-linkedin"></a></li> -->
+                                       </ul>
+                                   </div>
+                               </div>
+                               <a href="{{ url_for('users.account', username=u.username) }}">{{ u.name }}</a>
+                                <h3>{{ u.division }}</h3>
+                           </div>
+                       {% endif %}
+                   {% endfor %}
+              </div>
+
+         </div>
+    </div>
+</section>
+
+
+<section id="team" class="parallax-section">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-offset-2 col-md-8 col-sm-12">
+                    <!-- SECTION TITLE -->
+                    <div class="section-title">
+                         <h1>Research</h1>
+                    </div>
+               </div>
+
+               <div class="clearfix"></div>
+
+               <div id="owl-team" class="owl-carousel">
+                   {% for u in user %}
+                        {% if u.division == "Research" %}
+                            <div class="col-md-4 col-sm-4 item">
+                                <div class="team-item">
+                                    <img src="../static/images/profile_image/{{ u.profile_image }}" class="img-responsive img-team">
+                                    <div class="team-overlay">
+                                        <ul class="social-icon">
+                                                <!-- <li><a href="#" class="fa fa-twitter"></a></li>
+                                                <li><a href="#" class="fa fa-linkedin"></a></li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="{{ url_for('users.account', username=u.username) }}">{{ u.name }}</a>
+                                {% if u.role == 1 %}
+                                    <h3>Head of {{ u.division }}</h3>
+                                {% else %}
+                                    <h3>{{ u.division }}</h3>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+               </div>
+
+          </div>
+     </div>
+</section>
+
+<section id="team" class="parallax-section">
+    <div class="container">
+         <div class="row">
+
+              <div class="col-md-offset-2 col-md-8 col-sm-12">
+                   <!-- SECTION TITLE -->
+                   <div class="section-title">
+                        <h1>Human</h1>
+                   </div>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div id="owl-team" class="owl-carousel">
+                  {% for u in user %}
+                       {% if u.division == "Human" %}
+                           <div class="col-md-4 col-sm-4 item">
+                               <div class="team-item">
+                                    <img src="../static/images/profile_image/{{ u.profile_image }}" class="img-responsive img-team">
+                                    <div class="team-overlay">
+                                       <ul class="social-icon">
+                                               <!-- <li><a href="#" class="fa fa-twitter"></a></li>
+                                               <li><a href="#" class="fa fa-linkedin"></a></li> -->
+                                       </ul>
+                                    </div>
+                               </div>
+                               <a href="{{ url_for('users.account', username=u.username) }}">{{ u.name }}</a>
+                               {% if u.role == 1 %}
+                                   <h3>Head of {{ u.division }}</h3>
+                               {% else %}
+                                   <h3>{{ u.division }}</h3>
+                               {% endif %}
+                           </div>
+                       {% endif %}
+                   {% endfor %}
+              </div>
+         </div>
+    </div>
+</section>
+
+<section id="team" class="parallax-section">
+    <div class="container">
+         <div class="row">
+
+              <div class="col-md-offset-2 col-md-8 col-sm-12">
+                   <!-- SECTION TITLE -->
+                   <div class="section-title">
+                        <h1>Event</h1>
+                   </div>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div id="owl-team" class="owl-carousel">
+                  {% for u in user %}
+                       {% if u.division == "Event" %}
+                           <div class="col-md-4 col-sm-4 item">
+                               <div class="team-item">
+                                    <img src="../static/images/profile_image/{{ u.profile_image }}" class="img-responsive img-team">
+                                    <div class="team-overlay">
+                                       <ul class="social-icon">
+                                               <!-- <li><a href="#" class="fa fa-twitter"></a></li>
+                                               <li><a href="#" class="fa fa-linkedin"></a></li> -->
+                                       </ul>
+                                    </div>
+                               </div>
+                               <a href="{{ url_for('users.account', username=u.username) }}">{{ u.name }}</a>
+                               {% if u.role == 1 %}
+                                   <h3>Head of {{ u.division }}</h3>
+                               {% else %}
+                                   <h3>{{ u.division }}</h3>
+                               {% endif %}
+                           </div>
+                       {% endif %}
+                   {% endfor %}
+              </div>
+         </div>
+    </div>
+</section>
+
+<section id="team" class="parallax-section">
+    <div class="container">
+         <div class="row">
+
+              <div class="col-md-offset-2 col-md-8 col-sm-12">
+                   <!-- SECTION TITLE -->
+                   <div class="section-title">
+                        <h1>Education</h1>
+                   </div>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div id="owl-team" class="owl-carousel">
+                  {% for u in user %}
+                       {% if u.division == "Education" %}
+                           <div class="col-md-4 col-sm-4 item">
+                               <div class="team-item">
+                                    <img src="../static/images/profile_image/{{ u.profile_image }}" class="img-responsive img-team">
+                                    <div class="team-overlay">
+                                        <ul class="social-icon">
+                                               <!-- <li><a href="#" class="fa fa-twitter"></a></li>
+                                               <li><a href="#" class="fa fa-linkedin"></a></li> -->
+                                        </ul>
+                                     </div>
+                               </div>
+                               <a href="{{ url_for('users.account', username=u.username) }}">{{ u.name }}</a>
+                               {% if u.role == 1 %}
+                                   <h3>Head of {{ u.division }}</h3>
+                               {% else %}
+                                   <h3>{{ u.division }}</h3>
+                               {% endif %}
+                           </div>
+                       {% endif %}
+                   {% endfor %}
+              </div>
+              <div class = "space"></div>
+        </div>
+    </div>
+</section>
+
+<!-- SCRIPTS -->
+<script src="../static/ourpeople/js/jquery.js"></script>
+<script src="../static/ourpeople/js/bootstrap.min.js"></script>
+<script src="../static/ourpeople/js/jquery.parallax.js"></script>
+<script src="../static/ourpeople/js/owl.carousel.min.js"></script>
+<script src="../static/ourpeople/js/jquery.magnific-popup.min.js"></script>
+<script src="../static/ourpeople/js/magnific-popup-options.js"></script>
+<script src="../static/ourpeople/js/modernizr.custom.js"></script>
+<script src="../static/ourpeople/js/smoothscroll.js"></script>
+<script>
+    $('.owl-carousel').owlCarousel({
+        // loop:true,
+        // margin:10,
+        // nav:true,
+        // responsive:{
+        //    0 :{
+        //         items:1
+        //     },
+        //     600:{
+        //         items:3
+        //     },
+        //     1000:{
+        //         items:5
+        //     }
+        // }
+        autoPlay: 6000,
+        items : 4,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3],
+        itemsTablet: [768,2],
+        itemsTabletSmall: false,
+        itemsMobile : [479,1],
+        Speedfast: 200,
+    })
+</script>
+<script src="../static/index/js/custom.js"></script>
+
+<script>
+    var TxtRotate = function(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+    };
+
+    TxtRotate.prototype.tick = function() {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+    var that = this;
+    var delta = 300 - Math.random() * 100;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+    }
+
+    setTimeout(function() {
+        that.tick();
+    }, delta);
+    };
+
+    window.onload = function() {
+    var elements = document.getElementsByClassName('txt-rotate');
+    for (var i=0; i<elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-rotate');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+        }
+    }
+    // INJECT CSS
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+    document.body.appendChild(css);
+    };
+
+</script>
+
+
+{% endblock %}
+
+

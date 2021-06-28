@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<style>
+		body{
+			background-color: black;
+			text-align: center;
+		}
+		.imgege img{
+			height:400px;
+			width:400px;
+
+		}
+		.imgege{
+			flex: 1 0 0;
+		}
+		.buttong{
+			align-self:center;
+			flex: 1 1 0;
+		}
+		.buttong p{
+			font-size:20px;
+			padding: 10px;
+		}
+		.buttong h1{
+			color:white;
+			font-size:50px
+		}
+
+		.aa{
+			display:flex;
+			justify-content:center;
+			margin-top: 9%;
+			background-color: rgba(241, 137, 76, 0.2);
+			padding: 40px;
+			border-radius:25px;
+
+		}
+		.bb{
+			margin-bottom: 5%;
+		}
+		
+		.btn{
+			width: '150px'; 
+			height:'35px';
+		}
+		
+		@media only screen and (max-width: 500px) {
+			body{
+				margin-top: 100px;
+			}
+			
+			.aa{
+				flex-direction:column;
+				padding-right: 0px;
+				padding-left: 0px;
+				margin-right: auto;
+				margin-left: auto;
+			}
+			.buttong{
+				margin-bottom:30px;
+			}
+		}
+	</style>
+
+	<body>
+		
+		<div class="container aa">
+			<div class="imgege"><img src="../static/divisi/img/event.png" alt=""></div>
+			<div class="buttong">
+				<h1>Event</h1>
+				<p>Kami suka photoshop!</p>
+				<a href="{{url_for('core.coming_soon')}}"><button class="btn btn-danger">View Full Details</button></a>
+			</div>
+		</div>
+
+		<div class="container aa">
+			<div class="imgege"><img src="../static/divisi/img/edu.png" alt=""></div>
+			<div class="buttong">
+				<h1>Education</h1>
+				<p>Kami suka mengajar!</p>
+				<a href="{{url_for('core.coming_soon')}}"><button class="btn btn-danger">View Full Details</button></a>
+			</div>
+		</div>
+			
+		<div class="container aa">
+			<div class="imgege"><img src="../static/divisi/img/research.png" alt="" class="tete"></div>
+			<div class="buttong">
+				<h1>Research</h1>
+				<p>Kami suka belajar hal baru!</p>
+				<a href="{{url_for('core.coming_soon')}}"><button class="btn btn-danger">View Full Details</button></a>
+			</div>
+		</div>
+
+		<div class="container aa bb">
+			<div class="imgege"><img src="../static/divisi/img/human.png" alt="" class="tete"></div>
+			<div class="buttong">
+				<h1>Human</h1>
+				<p>Kami menjaga kualitas SDM CSC!</p>
+				<a href="{{url_for('core.coming_soon')}}"><button class="btn btn-danger">View Full Details</button></a>
+			</div>
+		</div>
+		
+	</body>
+	<script src="../static/Table/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script>
+
+		$(document).ready(function(){
+			$('.imgege img').mouseleave(function(){
+				$(this).animate({width: '400px', height:'400px'})
+			})
+			$('.imgege img').mouseover(function(){
+				$(this).animate({width: '500px', height:'500px'})
+			})
+
+			$('.buttong h1').mouseleave(function(){
+				$(this).animate({fontSize: '50px'}, 200)
+			})
+			$('.buttong h1').mouseover(function(){
+				$(this).animate({fontSize: '60px'}, 200)
+			})
+
+			$('.buttong p').mouseleave(function(){
+				$(this).animate({fontSize: '20px'}, 500)
+			})
+			$('.buttong p').mouseover(function(){
+				$(this).animate({fontSize: '30px'}, 500)
+			})
+		})
+
+	</script>
+		
+{% endblock %}
+

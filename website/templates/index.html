@@ -1,0 +1,366 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+<link rel="stylesheet" href="../static/index/css/owl.theme.css">
+<link rel="stylesheet" href="../static/index/css/owl.carousel.css">
+
+<!-- MAIN CSS -->
+<link rel="stylesheet" href="../static/base/css/tooplate-style.css">
+
+<style>
+     #about{
+          background-color: rgba(0, 0, 0);
+     }
+
+     #team{
+          background-color: black;
+          padding-bottom: 50px;
+
+     }
+     .description-about p{
+          font-size: 30px;
+          padding-bottom: 75px;
+          color: white;
+     }
+
+     .description-visi-misi p{
+          font-size: 30px;
+          color: white;
+     }
+     /* .color-box{
+          background-color: silver;
+     } */
+     .about-info h1{
+     /* font-size: 50px; */
+     letter-spacing: 12px;
+     text-transform: uppercase;
+     margin: 0;
+     padding: 30px;
+     color: white;
+
+     }
+
+     .description-misi p{
+          font-size: 30px;
+          color: white;
+     }
+
+     .section-title h1{
+          padding-bottom: 0px;
+          color: white;
+
+     }
+
+     #owl-team{
+          color: white;
+     }
+
+     .owl-carousel p{
+          color: white;
+     }
+     .banner{
+          height: 20px;
+          position: relative;
+          background: rgb(6,6,6);
+          background: linear-gradient(0deg, rgba(6,6,6,1) 49%, rgba(14,28,28,0.5161414907759979) 100%);
+     }
+     .timo{
+          padding-left:3px;
+     }
+     h2{
+		font-size:30px;
+     }
+     
+     .ayam{
+          width: 500px;
+          height: 500px;
+          margin-bottom: 20px;
+          margin-top: 35px;
+     }
+     @media only screen and (max-width: 600px) {
+          .ayam{
+               width: 300px;
+               height: 300px;
+               margin-bottom: 30px;
+               margin-top: 20px;
+          }
+     }
+     .garis_khatulistiwa{
+          padding: 25px;
+     }
+     .typing{
+          font-family: 'Raleway', sans-serif;
+     }
+     /* .jumbotron{
+          opacity: 0.5;
+     } */
+
+</style>
+<link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+<!-- HOME -->
+<section id="home" class="parallax-section">
+     <div class="overlay"></div>
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-8 col-sm-12">
+                    <div class="home-text">
+                         <h1 class="typing">
+                              <span
+                                 class="txt-rotate"
+                                 data-period="2000"
+                                 data-rotate='["Welcome to CSC", "Cyber Security Community"]'></span>
+                         </h1>
+                         <p class="timo" style="text-shadow: 1px 1px #000000;">Cyber Security Community Bina Nusantara</p>
+                    </div>
+               </div>
+
+          </div>
+     </div>
+
+     <!-- Video -->
+     <video controls autoplay loop muted>
+          <source src="../static/videos/slideshow.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+     </video>
+</section>
+
+<div class="banner"></div>
+<!-- ABOUT -->
+<section id="about" class="parallax-section">
+     <div class="container">
+          <div class="row">
+               <div class="col-md-offset-1 col-md-10 col-sm-12">
+                    <div class="about-info color-box">
+                         <img src="../static/images/logo_csc_resmi.png" alt="csc_binus" class="ayam">
+                    </div>
+                 <hr class="garis_khatulistiwa">
+               </div>
+          </div>
+     </div>
+     <div class="container">
+          <div class="row">
+               <div class="col-md-offset-1 col-md-10 col-sm-12">
+                    <div class="about-info">
+                         <h1>About Us</h1>
+                    </div>
+                    <div class="description-about">
+                         <p>Abbreviated as CSC, an Student Activity Unit created by BINUS University students who have interest and concern on Cyber Security. Cyber Security Community is a Student Activity Unit to learn together, share knowledge and experiences about Cyber Security.</p>
+                    </div>
+                    <hr class="garis_khatulistiwa">
+               </div>
+          </div>
+     </div>
+     <div class="container">
+          <div class="row">
+               <div class="col-md-offset-1 col-md-10 col-sm-12">
+                    <div class="about-info">
+                         <h1>VISION</h1>
+                    </div>
+                    <div class="description-about">
+                         <p>To realize solidarity, kinship, and accountability in organization, thus allowing its member to optimize knowledge of cybersecurity, and become an organization that is well known and has good relationships with companies and institutions in 2020.</p>
+                    </div>
+                    <hr class="garis_khatulistiwa">
+                    <div class="about-info">
+                         <h1>MISSION</h1>
+                    </div>
+                    <div class="description-about">
+                         <p>To gather BINUS University students who are interested in security, to make activities which strengthen kinship in organizations, to deepen knowledge by learning about cybersecurity, to actively participate in events and competitions related to Cyber Security, and to establish good relationships with companies and institutions. </p>
+                    </div>
+               </div>
+          </div>
+     </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="parallax-section">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-offset-2 col-md-8 col-sm-12">
+                    <!-- SECTION TITLE -->
+                    <div class="section-title">
+                         <h1>Meet Our People</h1>
+                    </div>
+               </div>
+
+               <div class="clearfix"></div>
+
+               <div id="owl-team" class="owl-carousel">
+                    <div class="col-md-4 col-sm-4 item">
+                        <div class="team-item">
+                            <img src="../static/images/profile_image/kaifa.jpg" class="img-responsive" alt="">
+                            <div class="team-overlay">
+                            </div>
+                        </div>
+                         <p>Kaifa Raihana</p>
+                         <h3>Chairman</h3>
+                    </div> 
+                    
+                    <div class="col-md-4 col-sm-4 item">
+                         <div class="team-item">
+                             <img src="../static/images/profile_image/nico.jpg" class="img-responsive" alt="">
+                             <div class="team-overlay">
+                             </div>
+                         </div>
+                          <p>Nico Christian</p>
+                          <h3>Vice Chairman</h3>
+                     </div> 
+
+                     <div class="col-md-4 col-sm-4 item">
+                         <div class="team-item">
+                             <img src="../static/images/profile_image/stefan.jpg" class="img-responsive" alt="">
+                             <div class="team-overlay">
+                             </div>
+                         </div>
+                          <p>Stefan Adisurya</p>
+                          <h3>Secretary</h3>
+                     </div> 
+
+                     <div class="col-md-4 col-sm-4 item">
+                         <div class="team-item">
+                             <img src="../static/images/profile_image/alex.jpg" class="img-responsive" alt="">
+                             <div class="team-overlay">
+                             </div>
+                         </div>
+                          <p>Alexander Christian</p>
+                          <h3>Treasurer</h3>
+                     </div> 
+
+                     <div class="col-md-4 col-sm-4 item">
+                         <div class="team-item">
+                             <img src="../static/images/profile_image/bryan.jpg" class="img-responsive" alt="">
+                             <div class="team-overlay">
+                             </div>
+                         </div>
+                          <p>Bryan Mitchell Lee</p>
+                          <h3>Head of Human</h3>
+                     </div> 
+
+
+                     <div class="col-md-4 col-sm-4 item">
+                         <div class="team-item">
+                             <img src="../static/images/profile_image/jeremy.jpg" class="img-responsive" alt="">
+                             <div class="team-overlay">
+                             </div>
+                         </div>
+                          <p>Jeremy Yonathan Chrisyanto</p>
+                          <h3>Head of Education</h3>
+                     </div> 
+
+                     <div class="col-md-4 col-sm-4 item">
+                         <div class="team-item">
+                             <img src="../static/images/profile_image/ardie.jpg" class="img-responsive" alt="">
+                             <div class="team-overlay">
+                             </div>
+                         </div>
+                          <p>Ardie Wijaya Eka Putra</p>
+                          <h3>Head of Event</h3>
+                     </div>
+               </div>
+          </div>
+     </div>
+</section>
+
+
+
+<!-- SCRIPTS -->
+<script src="../static/index/js/jquery.js"></script>
+<script src="../static/index/js/owl.carousel.min.js"></script>
+<script src="../static/index/js/custom.js"></script>
+<script>
+     var TxtRotate = function(el, toRotate, period) {
+     this.toRotate = toRotate;
+     this.el = el;
+     this.loopNum = 0;
+     this.period = parseInt(period, 10) || 2000;
+     this.txt = '';
+     this.tick();
+     this.isDeleting = false;
+     };
+ 
+     TxtRotate.prototype.tick = function() {
+     var i = this.loopNum % this.toRotate.length;
+     var fullTxt = this.toRotate[i];
+ 
+     if (this.isDeleting) {
+         this.txt = fullTxt.substring(0, this.txt.length - 1);
+     } else {
+         this.txt = fullTxt.substring(0, this.txt.length + 1);
+     }
+ 
+     this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+ 
+     var that = this;
+     var delta = 300 - Math.random() * 100;
+ 
+     if (this.isDeleting) { delta /= 2; }
+ 
+     if (!this.isDeleting && this.txt === fullTxt) {
+         delta = this.period;
+         this.isDeleting = true;
+     } else if (this.isDeleting && this.txt === '') {
+         this.isDeleting = false;
+         this.loopNum++;
+         delta = 500;
+     }
+ 
+     setTimeout(function() {
+         that.tick();
+     }, delta);
+     };
+ 
+     window.onload = function() {
+     var elements = document.getElementsByClassName('txt-rotate');
+     for (var i=0; i<elements.length; i++) {
+         var toRotate = elements[i].getAttribute('data-rotate');
+         var period = elements[i].getAttribute('data-period');
+         if (toRotate) {
+         new TxtRotate(elements[i], JSON.parse(toRotate), period);
+         }
+     }
+     // INJECT CSS
+     var css = document.createElement("style");
+     css.type = "text/css";
+     css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+     document.body.appendChild(css);
+     };
+ 
+ </script>
+ <script>
+      $(document).ready(function(){
+          $('.about-info h1').mouseleave(function(){
+		     $(this).animate({fontSize: '40px'}, 200)
+		})
+		$('.about-info h1').mouseover(function(){
+			$(this).animate({fontSize: '50px'}, 200)
+		})
+		$('.description-about p').mouseleave(function(){
+			$(this).animate({fontSize: '30px'}, 200)
+		})
+		$('.description-about p').mouseover(function(){
+			$(this).animate({fontSize: '40px'}, 200)
+          })
+          $('.section-title h1').mouseover(function(){
+			$(this).animate({fontSize: '50px'}, 200)
+          })
+          $('.section-title h1').mouseleave(function(){
+			$(this).animate({fontSize: '40px'}, 200)
+          })
+
+          $('.ayam').mouseover(function(){
+			$(this).animate({width: '600px', height: '600px'}, 200)
+          })
+          $('.ayam').mouseleave(function(){
+			$(this).animate({width: '500px', height: '500px'}, 200)
+          })
+          
+          
+          
+
+     })
+ </script>
+{% endblock %}
+
+
