@@ -1,12 +1,14 @@
-# WEBSITE VERSION 2
+# Website CSC V2
+
+## Todo List
+1. B24 Front end Rework
+
+## Current Work
+
+1. base.html
+2. index.html
 
 
-## Homework Front-end
-- Page create.html ("create to do list")
-- Page todolist.html ("untuk melihat todolistnya")
-- Page profile.html ("untuk melihat profile dan todolist pemilik profile")
-- Page article.html + Artikel redirect ke https://student-activity.binus.ac.id/csc/2020/08/kreditplus-akui-kebocoran-890-000-lebih-data-nasabahnya/ (contoh aja)
-- ~~Navbarnya benerin~~
+## Done
 
-## Homework Back-end
-- Backend shits
+1. 
