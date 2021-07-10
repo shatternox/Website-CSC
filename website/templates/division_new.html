@@ -1,85 +1,153 @@
 {% extends "base_new.html" %}
 {% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Division</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <style>
-        body{
-            background-color: black;
-            box-sizing: border-box;
-        }
-        img {
-            width: 100%;
-        }
-
-        .container-fluid{
-            width: 75vw;
-            background-color: rgba(241, 137, 76, 0.2);
-            border-radius: 25px;
-            padding: 3%;
-            margin-top: 5%;
-            margin-bottom: 5%;
-        }
-
-        p {
-            font-size: 1.5rem;
-        }
-
-        h1 {
-            font-size: 3rem;
-            color:white;
-        }
-
-    </style>
+<link rel="stylesheet" href="/static/css/index.css">
 </head>
-<body>
-    <div class="container-fluid d-flex flex-md-row flex-column justify-content-md-around align-items-center">
-        <div class="division-image col-md-4 col-10">
-            <img src="../static/divisi/img/event.png" alt="">
-        </div>
-        <div class="division-content text-center col-md-8 col-12">
-            <h1 class="division">Event</h1>
-            <p>Kami suka photoshop!</p>
-            <a href="{{url_for('core.coming_soon')}}"><button class="btn btn-danger">View Full Details</button></a>
-        </div>
-    </div>
-    <div class="container-fluid d-flex flex-md-row flex-column justify-content-md-around align-items-center">
-        <div class="division-image col-md-4 col-10">
-            <img src="../static/divisi/img/edu.png" alt="">
-        </div>
-        <div class="division-content text-center col-md-8 col-12">
-            <h1>Education</h1>
-            <p>Kami suka mengajar!</p>
-            <a href="{{url_for('core.coming_soon')}}"><button class="btn btn-danger">View Full Details</button></a>
-        </div>
-    </div>
-    <div class="container-fluid d-flex flex-md-row flex-column justify-content-md-around align-items-center">
-        <div class="division-image col-md-4 col-10">
-            <img src="../static/divisi/img/research.png" alt="">
-        </div>
-        <div class="division-content text-center col-md-8 col-12">
-            <h1>Research</h1>
-            <p>Kami suka belajar hal baru!</p>
-            <a href="{{url_for('core.coming_soon')}}"><button class="btn btn-danger">View Full Details</button></a>
-        </div>
-    </div>
-    <div class="container-fluid d-flex flex-md-row flex-column justify-content-md-around align-items-center">
-        <div class="division-image col-md-4 col-10">
-            <img src="../static/divisi/img/human.png" alt="">
-        </div>
-        <div class="division-content text-center col-md-8 col-12">
-            <h1>Human</h1>
-            <p>Kami menjaga kualitas SDM CSC!</p>
-            <a href="{{url_for('core.coming_soon')}}"><button class="btn btn-danger">View Full Details</button></a>
-        </div>
-    </div>
+    <style>
+        
+        .division-container{
+            background-color: black;
+            display: flex;
+        }
+        
+        .division-container > div{
+            transition: all 300ms ease-in-out 0ms;
+            background-color: #9e1625;
+            margin: 0 30px;
+            border-radius: 50px 0;
+            position: relative;
+            bottom: 40px;
+        }
+        .division-container > div:hover{
+            transition: all 300ms ease-in-out 0ms;
+            background-color: white;
+            color: black;
+        }
+        .division-container > div:hover > div{
+            
+            color: black;
+        }
+        .division-item{
+            padding: 30px;
+            
+        }
+        .division-item>img{
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin: auto;
+            margin-bottom: 40px;
+        }
 
-</body>
-</html>
+        @media (max-width:768px) {
+            .division-container{
+                flex-direction: column;
+                
+            }
+            .division-container > div{
+                margin: 30px 20px;
+                bottom: 0;
+            }
+        }
+    </style>
+    <div class="first-content">
+        <div class="row">
+            <div class="col-12">
+                <div class="first-text-content">
+                    <div class="txt-rotate"
+                        data-period="2000"
+                        data-rotate='["Welcome to CSC", "This are our divions"]'>
+                    </div>
+                </div>
+                <div class="second-text-content">
+                    Cyber Security Community Bina Nusantara
+                </div>
+            </div>
+        </div>
+        <video controls="false" autoplay="" loop="" muted="" style="background-color: black;">
+            <source src="/static/videos/slideshow.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="overlay"></div>
+    <div class="division-container">
+        <div class="division-item">
+            <img src="/static/divisi/img/edu.png" alt="">
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel orci consectetur, sodales sem fringilla, consectetur dui. Proin quis condimentum erat. </div>
+        </div>
+        <div class="division-item">
+            <img src="/static/divisi/img/research.png" alt="">
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel orci consectetur, sodales sem fringilla, consectetur dui. Proin quis condimentum erat. </div>
+        </div>
+        <div class="division-item">
+            <img src="/static/divisi/img/event.png" alt="">
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel orci consectetur, sodales sem fringilla, consectetur dui. Proin quis condimentum erat. </div>
+        </div>
+        <div class="division-item">
+            <img src="/static/divisi/img/human.png" alt="">
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel orci consectetur, sodales sem fringilla, consectetur dui. Proin quis condimentum erat. </div>
+        </div>
+    </div>
+    <script>
+        $('.division-container').click(()=>{
+            window.location = '#'
+        })
+        var TxtRotate = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+        };
+    
+        TxtRotate.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+    
+        if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+    
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+    
+        var that = this;
+        var delta = 300 - Math.random() * 100;
+    
+        if (this.isDeleting) { delta /= 2; }
+    
+        if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+        }
+    
+        setTimeout(function() {
+            that.tick();
+        }, delta);
+        };
+    
+        window.onload = function() {
+        var elements = document.getElementsByClassName('txt-rotate');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-rotate');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+            new TxtRotate(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+        document.body.appendChild(css);
+        };
+    
+    </script>
 {% endblock %}
