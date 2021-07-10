@@ -5,10 +5,7 @@
 
 ## Current Work
 
-1. base.html
-2. index.html
-
-
-## Done
-
-1. 
+1. ~~base.html
+2. ~~index.html
+3. login.html
+4. ourpeople.html
