@@ -60,7 +60,7 @@ nav.navbar div.container-fluid button.navbar-toggler {
 }
 
 nav.navbar #web-navigation {
-  font-family: Source Sans Pro;
+  font-family: Source Sans Pro !important;
   letter-spacing: 0.5px;
 }
 
