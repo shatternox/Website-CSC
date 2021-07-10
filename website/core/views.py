@@ -137,4 +137,4 @@ def coming_soon():
 
 @core.route('/divisi')
 def divisi():
-    return render_template('divisi.html')
+    return render_template('division_new.html')
