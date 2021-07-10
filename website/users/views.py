@@ -41,7 +41,7 @@ def login():
 
             return redirect(next)
 
-    return render_template('login.html', form=form, title='Login')
+    return render_template('login_new.html', form=form, title='Login')
 
 
 @users.route("/user/<username>", methods=['GET', 'POST'])
