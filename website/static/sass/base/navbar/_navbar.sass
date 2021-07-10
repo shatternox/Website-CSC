@@ -1,0 +1,14 @@
+// import file only
+// @media screen and ( max-width: 991px )
+
+@import _navbar_custom_style_phone
+@import _navbar_effects
+@media screen and ( min-width: 768px )
+	@import _navbar_custom_style
+	@import _navbar_custom_moved
+
+// to have a boundary on a function
+// we can use min and max at the same time
+// and not use min-width or max-width
+// ex.
+// width: max(360px,min(vw,1380px))

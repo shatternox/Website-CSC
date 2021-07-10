@@ -1,0 +1,68 @@
+nav.navbar
+	div.container-fluid
+		#web-navigation
+
+			// navbar underline hover effect----------------------------------------------------------
+			.navbar-nav
+				.custom-navbar-underline-effect::after
+					display: block
+					content: ""
+					width: 0%
+					height: 2px
+					background: rgba(255,255,255,.75)
+					transition-duration: 200ms
+					margin-left: auto
+				.custom-navbar-underline-effect:hover::after
+					width: 100%
+					margin-left: 0
+
+			// navbar mobile margin resize effect-----------------------------------------------------
+			.custom-mobile-margin-effect
+				margin: 0px
+				transition-duration: 200ms
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// first protoype-----------------------
+
+// // navbar underline hover effect
+// nav.navbar
+// 	div.container-fluid
+// 		#navigation
+// 			.navbar-nav
+// 				.nav-link
+// 					margin: 15px 20px !important
+// 				.nav-link::after
+// 					display: block
+// 					content: ""
+// 					width: 0%
+// 					height: 2px
+// 					background: rgba(255,255,255,.75)
+// 					transition-duration: 200ms
+
+// 				.nav-link:hover::after
+// 					width: 100%
+
+
+// // navbar mobile margin resize effect
+// nav.navbar
+// 	div.container-fluid
+// 		margin: 0px
+// 		transition-duration: 200ms

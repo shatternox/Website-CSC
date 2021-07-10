@@ -1,0 +1,181 @@
+.row{
+    margin: 0;
+    padding: 0;
+}
+
+/* .first-content{
+    margin-bottom: 100vh;
+} */
+
+.first-content > div:nth-child(3){
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.first-content video{
+    filter: brightness(25%);
+
+}
+
+/* .first-content *{ */
+    /* width: 100vw; */
+/* } */
+
+.first-text-content{
+    font-size: 5vw;
+    z-index: 2;
+}
+
+.first-content > .row{
+    position: absolute;
+    top: 45vh;
+    transform: translate(0, -50%);
+    margin-left: 10%;
+    margin-top: 4%;
+    left: 1vw;
+}
+
+.first-content > video{
+    position: fixed;
+    /* height: 100vh; */
+    z-index: -1;
+    top: 0;
+}
+
+.logo-csc{
+    z-index: 2;
+}
+
+.logo-image{
+    width: 30vw;
+    transition: width 1s;
+}
+
+.second-content-title, .third-content-title{
+    font-size: 4vw;
+    transition: font-size 1s;
+}
+
+.second-content > .row{
+    border-top: 5px solid white;
+}
+
+.second-sub-content{
+    font-size: 2vw;
+    transition: font-size 0.5s;
+}
+
+.name{
+    font-size: 1.5vw;
+}
+
+.position{
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+#carouselExampleCaptions{
+    width: 25vw;
+}
+
+.carousel-item > div:nth-child(3){
+    background-color: rgba(255, 255, 255, 0.3);
+    visibility: hidden;
+}
+/* .overlay{
+	height: 100vh;
+	width: 100%;
+} */
+.first-content video{
+	width:100%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	background-color: black;
+}
+
+@media screen and (min-width: 768px) {
+	.overlay{
+		height: 100vh;
+		width: 100%;
+	}
+    
+}
+
+@media screen and (max-width: 768px) {
+	.overlay{
+		height: 100vh;
+		width: 100%;
+	}
+    .first-content video{
+        right: -25vw;
+    }
+	/* .first-content video{
+		height:100%;
+        width: 100%;
+	} */
+
+    #carouselExampleCaptions{
+        width: 45vw;
+    }
+
+    .name{
+        font-size: 2.5vw;
+    }
+
+    .position{
+        font-size: 2vw;
+    }
+
+    .second-content-title, .third-content-title{
+        font-size: 5vw;
+    }
+
+    .second-sub-content{
+        font-size: 3vw;
+    }
+
+    .logo-image{
+        width: 37.5vw;
+    }
+
+    .first-text-content{
+        font-size: 7vw;
+    }
+
+    .logo-image:hover{
+        width: 40vw;
+    }
+
+    .second-content-title:hover, .third-content-title:hover{
+        font-size: 6vw;
+    }
+
+    .second-sub-content:hover{
+        font-size: 3.1vw;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .logo-image:hover{
+        width: 32.5vw;
+    }
+
+    .second-content-title:hover, .third-content-title:hover{
+        font-size: 5vw;
+    }
+
+    .second-sub-content:hover{
+        font-size: 2.1vw;
+    }
+}
+
+.carousel-item:hover > .carousel-item > div:nth-child(3){
+    visibility: visible;
+}

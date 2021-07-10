@@ -121,7 +121,7 @@ def index():
 
     user = User.query.all()
 
-    return render_template('index.html', user=user)
+    return render_template('index_new.html', user=user)
 
 
 @core.route("/ourpeople")
