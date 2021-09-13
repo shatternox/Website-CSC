@@ -1,7 +1,0 @@
-*.pyc
-bin/
-lib/
-pyenv.cfg/
-share/
-pyvenv.cfg
-lib64/
