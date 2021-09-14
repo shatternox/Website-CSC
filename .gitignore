@@ -5,3 +5,5 @@ pyenv.cfg/
 share/
 pyvenv.cfg
 lib64/
+.gitignore
+include/
