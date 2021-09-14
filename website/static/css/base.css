@@ -1,27 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700");
-html,body{
+footer.website-footer {
   height: 100%;
-  width:100%;
-}
-
-/* footer.website-footer { */
-  /* height: 100%; */
-/* } */
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
-  color: white;
-}
-
-::-webkit-scrollbar{
-  display: none;
-}
-
-main{
-  background-color: black;
 }
 
 footer.website-footer .footer {
@@ -60,7 +39,7 @@ nav.navbar div.container-fluid button.navbar-toggler {
 }
 
 nav.navbar #web-navigation {
-  font-family: Source Sans Pro !important;
+  font-family: Source Sans Pro;
   letter-spacing: 0.5px;
 }
 
@@ -131,7 +110,4 @@ nav.navbar div.container-fluid #web-navigation .custom-mobile-margin-effect {
     background-color: rgba(164, 0, 0, 0.5) !important;
   }
 }
-
-
-
-/*# sourceMappingURL=base.min.css.map */
+/*# sourceMappingURL=base.css.map */

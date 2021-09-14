@@ -1,6 +1,29 @@
 {% extends "base_new.html" %}
 {% block content %}
 
-
+<link rel="stylesheet" href="../static/css/login.css">
+<div class="filler" style="height: 100vh; background-color: rgb(81, 81, 81);"></div>
+<div class="login-prompt position-fixed top-50 start-50 translate-middle w-50 h-50 bg-light rounded-3 overflow-auto">
+	<div class="login-prompt-text text-center text pt-5 h1">Welcome back activist!</div>
+	<form action="/sendPostLogin" method="post" class="d-flex align-items-center justify-content-center">
+		{{ form.hidden_tag() }}
+		<div class="formContainer d-flex align-content-center justify-content-center w-75 h-100 flex-column">
+			<div class="mb-md-2 w-100 mt-2">
+				<label for="emailInput">Email</label>
+				<input class="form-control" type="email" name="email" id="emailInput">
+			</div>
+			<div class="mb-md-2 w-100 mt-2">
+				<label for="passwordInput">password</label>
+				<input class="form-control" type="password" name="password" id="passwordInput">
+			</div>
+			<div class="login-prompt-container-container-button mb-md-2 w-100 mt-2 d-flex justify-content-end">
+				<div class="login-prompt-container-button d-flex justify-content-end">
+					<button type="submit" class=" login-prompt-button btn btn-primary w-75 mt-2 ">Submit</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<script src="/static/js/login.js" defer></script>
   
 {% endblock %}
