@@ -12,5 +12,5 @@
 2. ~~index.html~~
 3. ~~login.html~~ - tinggal backg
 4. ~~ourpeople.html~~ 
-5. ~~division.html ~~
+5. ~~division.html~~
 6. article.html - msh blm
