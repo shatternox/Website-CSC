@@ -18,17 +18,19 @@
             width: 100%;
         }
 
-        .container-fluid{
+        .container-fluid2{
             width: 75vw;
             background-color: rgba(241, 137, 76, 0.2);
             border-radius: 25px;
             padding: 3%;
+            margin: auto;
             margin-top: 5%;
             margin-bottom: 5%;
         }
 
         p {
             font-size: 1.5rem;
+            color: whitesmoke;
         }
 
         h1 {
@@ -36,10 +38,20 @@
             color:white;
         }
 
+        .margin-Top{
+            margin-top: 35%;
+        }
+
+        @media (min-width: 768px){
+            .margin-Top{
+                margin-top: 17%;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <div class="container-fluid d-flex flex-md-row flex-column justify-content-md-around align-items-center">
+    <div class="container-fluid2 d-flex flex-md-row flex-column justify-content-md-around align-items-center margin-Top">
         <div class="division-image col-md-4 col-10">
             <img src="../static/divisi/img/event.png" alt="">
         </div>
@@ -49,7 +61,7 @@
             <a href="{{url_for('core.coming_soon')}}"><button class="btn btn-danger">View Full Details</button></a>
         </div>
     </div>
-    <div class="container-fluid d-flex flex-md-row flex-column justify-content-md-around align-items-center">
+    <div class="container-fluid2 d-flex flex-md-row flex-column justify-content-md-around align-items-center">
         <div class="division-image col-md-4 col-10">
             <img src="../static/divisi/img/edu.png" alt="">
         </div>
@@ -59,7 +71,7 @@
             <a href="{{url_for('core.coming_soon')}}"><button class="btn btn-danger">View Full Details</button></a>
         </div>
     </div>
-    <div class="container-fluid d-flex flex-md-row flex-column justify-content-md-around align-items-center">
+    <div class="container-fluid2 d-flex flex-md-row flex-column justify-content-md-around align-items-center">
         <div class="division-image col-md-4 col-10">
             <img src="../static/divisi/img/research.png" alt="">
         </div>
@@ -69,7 +81,7 @@
             <a href="{{url_for('core.coming_soon')}}"><button class="btn btn-danger">View Full Details</button></a>
         </div>
     </div>
-    <div class="container-fluid d-flex flex-md-row flex-column justify-content-md-around align-items-center">
+    <div class="container-fluid2 d-flex flex-md-row flex-column justify-content-md-around align-items-center">
         <div class="division-image col-md-4 col-10">
             <img src="../static/divisi/img/human.png" alt="">
         </div>
