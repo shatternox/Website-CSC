@@ -10,7 +10,7 @@
 
 1. ~~base.html~~
 2. ~~index.html~~
-3. ~~login.html~~ - Udah setengah jadi tinggal di perindah bg nya biar gk kosong
-4. ~~ourpeople.html~~ - Udah kelar cuma tinggal tambah tambah nama, gambar, sama jabatan
-5. division.html
-6. article.html
+3. ~~login.html~~ - tinggal backg
+4. ~~ourpeople.html~~ 
+5. ~~division.html ~~
+6. article.html - msh blm
