@@ -44,9 +44,19 @@
 					<li class="nav-item">
 						<a class="nav-link ms-3 me-lg-3 custom-navbar-underline-effect" aria-current="page" href="{{ url_for('core.ourpeople') }}">OUR PEOPLE</a>
 					</li>
-					<li class="nav-item">
+					
+					{% if current_user.is_authenticated %}
+					<li>
+						<a class="nav-link ms-3 me-lg-3 custom-navbar-underline-effect text-uppercase" aria-current="page" href="{{ url_for('users.account', username=current_user.username) }}">{{ current_user.username }}</a>
+					</li>
+					<li>
+						<a class="nav-link ms-3 me-lg-3 custom-navbar-underline-effect" aria-current="page" href="{{ url_for('users.logout') }}">LOGOUT</a>
+					</li>
+					{% else %}
+					<li>
 						<a class="nav-link ms-3 me-lg-3 custom-navbar-underline-effect" aria-current="page" href="{{ url_for('users.login') }}">LOGIN</a>
 					</li>
+					{% endif %}
 				</ul>
 			  </div>
 		</div>

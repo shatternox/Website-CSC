@@ -11,10 +11,11 @@
 1. ~~base.html~~
 2. ~~index.html~~
 3. ~~login.html~~ - tinggal backg
-4. ~~ourpeople.html~~ 
+4. ~~ourpeople.html~~
 5. ~~division.html~~
 6. article.html - nunggu desain dr divisi media
-7. Betulin bagian dalem : halaman pada navbar
+7. Betulin bagian dalem : ~~halaman pada navbar~~
+  -userpage
 
 additional stuff:
 add ckeditor for article creation
