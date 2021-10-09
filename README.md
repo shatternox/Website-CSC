@@ -14,3 +14,6 @@
 4. ~~ourpeople.html~~ - Udah kelar cuma tinggal tambah tambah nama, gambar, sama jabatan
 5. division.html
 6. article.html
+
+additional stuff:
+add ckeditor for article creation
