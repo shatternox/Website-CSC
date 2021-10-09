@@ -13,4 +13,5 @@
 3. ~~login.html~~ - tinggal backg
 4. ~~ourpeople.html~~ 
 5. ~~division.html~~
-6. article.html - msh blm
+6. article.html - nunggu desain dr divisi media
+7. Betulin bagian dalem : halaman pada navbar
