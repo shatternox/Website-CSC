@@ -38,7 +38,7 @@ def create_article():
 @articles.route('/article/<int:article_id>')
 def article_solo(article_id):
     article = Article.query.get_or_404(article_id)
-    return render_template('article_solo.html', article=article)
+    return render_template('article_solo_new.html', article=article)
 
 
 # UPDATE
@@ -95,4 +95,4 @@ def article():
     article = Article.query.order_by(
         Article.date.desc()).paginate(page=page, per_page=3)
 
-    return render_template('article.html', article=article)
+    return render_template('article_new.html', article=article)
