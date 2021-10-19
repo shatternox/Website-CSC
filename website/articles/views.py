@@ -30,7 +30,7 @@ def create_article():
         db.session.commit()
         return redirect(url_for('articles.article'))
 
-    return render_template('create_article.html', form=form)
+    return render_template('create_article_new.html', form=form)
 
 # READ
 
@@ -70,7 +70,7 @@ def update_article(article_id):
         form.title.data = article.title
         form.content.data = article.content
 
-    return render_template('create_article.html', form=form)
+    return render_template('create_article_new.html', form=form)
 
 # DELETE
 

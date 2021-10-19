@@ -1,0 +1,45 @@
+{% extends "base_new.html" %}
+{% block content %}
+
+<style>
+	.full-page{
+		padding-top: 9%;
+		padding-left: 11.4%;
+		min-height: calc(100vh - 52.25px); /* kenapa 52.25 ? karena footer size nya selalu 52.25 bahkan kalau 100% */
+	}
+    .fake-body{
+        height: 100%;
+        width: 30%;
+        color:white;
+    }
+    .fake-body .form-group{
+        color:white;
+    }
+    body{
+        background-color: black;
+    }
+</style>
+
+<div class="full-page">
+	<div class="fake-body">
+		<form method="POST" enctype="multipart/form-data">
+			{{form.hidden_tag()}}
+			<div class="form-group">
+				{{ form.title.label(class='form-group') }}
+				{{ form.title(class='form-control form-control-lg') }}
+			</div>
+			<div class="form-group">
+				{{ form.content.label(class='form-group') }}
+				{{ form.content(class='form-control') }}
+			</div>
+			<div class="form-group">
+				{{ form.picture.label(class='form-group') }}
+				{{ form.picture() }}
+			</div>
+			{{ form.submit(class="btn btn-info") }}
+		</form>
+	</div>
+</div>
+
+
+{% endblock %}
